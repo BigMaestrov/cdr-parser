@@ -54,8 +54,12 @@ public class CDR {
         this.tariffType = tariffType;
     }
 
-    private double getCost(){
+    public double getCost(){
         return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 
     public Date getDuration() {

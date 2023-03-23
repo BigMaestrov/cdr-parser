@@ -1,19 +1,36 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Abonent {
     private String phoneNumber;
     private String tariffType;
     private List<CDR> calls;
-    private int totalCost;
+    private double totalCost;
+    private Date totalDuration;
+
+    public Date getTotalDuration() {
+        return totalDuration;
+    }
+
+    public void setTotalDuration(Date totalDuration) {
+        this.totalDuration = totalDuration;
+    }
+
+    public void addTotalDuration(Long addedDuration) {
+        this.totalDuration = new Date(totalDuration.getTime() + addedDuration);
+    }
 
     @Override
     public String toString() {
         String stringCalls = "";
         for (CDR buff: calls) {
             stringCalls +=buff.toString();
+        }
+        for (CDR buff: calls) {
+            totalCost +=buff.getCost();
         }
         return "\nTariff index: "+ tariffType+"\n" +
                 "----------------------------------------------------------------------------\n" +
@@ -23,8 +40,8 @@ public class Abonent {
                 "----------------------------------------------------------------------------\n" +
                 stringCalls+
                 "----------------------------------------------------------------------------\n" +
-                "|                                                      Total Cost: |   "+totalCost+"   |\n" +
-                "----------------------------------------------------------------------------\n";
+                "|                                                      Total Cost: |  "+totalCost+"   |\n" +
+                "----------------------------------------------------------------------------";
     }
 
     public String getPhoneNumber() {
@@ -72,6 +89,7 @@ public class Abonent {
     }
 
     public Abonent(CDR cdr) {
+        totalDuration = new Date(0+cdr.getDuration().getTime());
         phoneNumber = cdr.getPhoneNumber();
         tariffType = cdr.getTariffType();
         calls = new ArrayList<CDR>();
@@ -79,6 +97,7 @@ public class Abonent {
     }
 
     public Abonent() {
+        totalDuration = new Date(0);
         calls = new ArrayList<CDR>();
     }
 }

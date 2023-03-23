@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Добавил расчет длительности разговора и вывод всех дат в нужном формате">
+    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Подправил вывод в консоль">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CDR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CDR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679586941371</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Подправил вывод в консоль">
+      <created>1679587335652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679587335652</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,6 +127,7 @@
     <MESSAGE value="Добавил парсинг CDR файла, классы модели для cdr записи и аббонента" />
     <MESSAGE value="Добавил преобразование абонента в строковый вид нужного формата" />
     <MESSAGE value="Добавил расчет длительности разговора и вывод всех дат в нужном формате" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил расчет длительности разговора и вывод всех дат в нужном формате" />
+    <MESSAGE value="Подправил вывод в консоль" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подправил вывод в консоль" />
   </component>
 </project>
