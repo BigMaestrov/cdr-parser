@@ -3,10 +3,10 @@ package org.example;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Main {
             long time = System.currentTimeMillis();
             //Заполнения списка для вывода информации
             Map<String, Abonent> abonentMap = parseCDR("./src/main/resources/cdr.txt");
-            for(Map.Entry<String, Abonent> a : abonentMap.entrySet()){
+            for (Map.Entry<String, Abonent> a : abonentMap.entrySet()) {
                 System.out.printf("Key: %s  Value: %s \n", a.getKey(), a.getValue().toString());
             }
             //Конец отсчета времени
@@ -27,6 +27,8 @@ public class Main {
 
     //Парсинг cdr файла
     private static Map<String, Abonent> parseCDR(String filePath) throws IOException {
+        //Устанавливаем формат для чтения даты и времени начала и конца разговора
+        DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         Map<String, Abonent> abonentMap = new HashMap<String, Abonent>();
         //Загрузка строк из файла
         List<String> fileLines = Files.readAllLines(Paths.get(filePath));
@@ -37,44 +39,29 @@ public class Main {
             //Цикл по колонкам
             for (int i = 0; i < splitedText.length; i++) {
                 //Если колонка начинается на кавычки или заканчиваеться на кавычки
-                if (IsColumnPart(splitedText[i])) {
-                    String lastText = columnList.get(columnList.size() - 1);
-                    columnList.set(columnList.size() - 1, lastText + "," + splitedText[i]);
-                } else {
-                    columnList.add(splitedText[i]);
-                }
+                columnList.add(splitedText[i]);
             }
             //Заполнение cdr
             CDR cdr = new CDR();
             cdr.setTypeOfCall(columnList.get(0));
             cdr.setPhoneNumber(columnList.get(1));
-            cdr.setStartOfCall(columnList.get(2));
-            cdr.setEndOfCall(columnList.get(3));
+            try {
+                //Форматирование строки в дату
+                cdr.setStartOfCall(format.parse(columnList.get(2).trim()));
+                cdr.setEndOfCall(format.parse(columnList.get(3).trim()));
+                //Расчет длительности разговора
+                cdr.setDuration(new Date(cdr.getEndOfCall().getTime() - cdr.getStartOfCall().getTime() - 14400000));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             cdr.setTariffType(columnList.get(4));
             //Заполнение абонента
-            if(abonentMap.containsKey(columnList.get(1))){
+            if (abonentMap.containsKey(columnList.get(1))) {
                 abonentMap.get(columnList.get(1)).getCalls().add(cdr);
             } else {
                 abonentMap.put(columnList.get(1), new Abonent(cdr));
             }
         }
         return abonentMap;
-    }
-
-    //Проверка является ли колонка частью предыдущей колонки
-    private static boolean IsColumnPart(String text) {
-        String trimText = text.trim();
-        //Если в тексте одна ковычка и текст на нее заканчиваеться значит это часть предыдущей колонки
-        return trimText.indexOf("\"") == trimText.lastIndexOf("\"") && trimText.endsWith("\"");
-    }
-
-    //Проверка является ли строка числом
-    private static boolean isDigit(String s) throws NumberFormatException {
-        try {
-            int num = Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
     }
 }

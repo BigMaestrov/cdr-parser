@@ -1,12 +1,17 @@
 package org.example;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CDR {
     private String phoneNumber;
     private String typeOfCall;
     //YYYYMMDDHH24MMSS
-    private String startOfCall;
-    private String endOfCall;
+    private Date startOfCall;
+    private Date endOfCall;
     private String tariffType;
+    private Date duration;
     private double cost;
 
     public String getPhoneNumber() {
@@ -25,19 +30,19 @@ public class CDR {
         this.typeOfCall = typeOfCall;
     }
 
-    public String getStartOfCall() {
+    public Date getStartOfCall() {
         return startOfCall;
     }
 
-    public void setStartOfCall(String startOfCall) {
+    public void setStartOfCall(Date startOfCall) {
         this.startOfCall = startOfCall;
     }
 
-    public String getEndOfCall() {
+    public Date getEndOfCall() {
         return endOfCall;
     }
 
-    public void setEndOfCall(String endOfCall) {
+    public void setEndOfCall(Date endOfCall) {
         this.endOfCall = endOfCall;
     }
 
@@ -53,8 +58,22 @@ public class CDR {
         return cost;
     }
 
+    public Date getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Date duration) {
+        this.duration = duration;
+    }
+
     @Override
     public String toString() {
-        return "|     02    | 2023-10-11 14:00:17 | 2023-10-11 14:10:19 | 00:10:02 |  "+cost+" |\n";
+        DateFormat dateFormater1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String start = dateFormater1.format(startOfCall);
+        String end = dateFormater1.format(endOfCall);
+        DateFormat dateFormater2 = new SimpleDateFormat("HH:mm:ss");
+        String dur = dateFormater2.format(duration);
+
+        return "|     "+tariffType+"   | "+start+" | "+end+" | "+ dur+" |  "+cost+" |\n";
     }
 }
