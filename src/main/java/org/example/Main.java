@@ -55,7 +55,7 @@ public class Main {
             if(abonentMap.containsKey(columnList.get(1))){
                 abonentMap.get(columnList.get(1)).getCalls().add(cdr);
             } else {
-                abonentMap.put(columnList.get(1), new Abonent());
+                abonentMap.put(columnList.get(1), new Abonent(cdr));
             }
         }
         return abonentMap;

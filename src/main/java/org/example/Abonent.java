@@ -11,12 +11,20 @@ public class Abonent {
 
     @Override
     public String toString() {
-        return "Abonent{" +
-                "phoneNumber='" + phoneNumber + '\'' +
-                ", tariffType='" + tariffType + '\'' +
-                ", calls=" + calls +
-                ", totalCost=" + totalCost +
-                '}';
+        String stringCalls = "";
+        for (CDR buff: calls) {
+            stringCalls +=buff.toString();
+        }
+        return "\nTariff index: "+ tariffType+"\n" +
+                "----------------------------------------------------------------------------\n" +
+                "Report for phone number "+phoneNumber+"\n" +
+                "----------------------------------------------------------------------------\n" +
+                "| Call Type |   Start Time        |     End Time        | Duration | Cost  |\n" +
+                "----------------------------------------------------------------------------\n" +
+                stringCalls+
+                "----------------------------------------------------------------------------\n" +
+                "|                                           Total Cost: |     "+totalCost+" |\n" +
+                "----------------------------------------------------------------------------\n";
     }
 
     public String getPhoneNumber() {
@@ -64,6 +72,8 @@ public class Abonent {
     }
 
     public Abonent(CDR cdr) {
+        phoneNumber = cdr.getPhoneNumber();
+        tariffType = cdr.getTariffType();
         calls = new ArrayList<CDR>();
         calls.add(cdr);
     }

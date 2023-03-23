@@ -7,6 +7,7 @@ public class CDR {
     private String startOfCall;
     private String endOfCall;
     private String tariffType;
+    private double cost;
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -48,14 +49,12 @@ public class CDR {
         this.tariffType = tariffType;
     }
 
+    private double getCost(){
+        return cost;
+    }
+
     @Override
     public String toString() {
-        return "CDR{" +
-                "phoneNumber='" + phoneNumber + '\'' +
-                ", typeOfCall='" + typeOfCall + '\'' +
-                ", startOfCall='" + startOfCall + '\'' +
-                ", endOfCall='" + endOfCall + '\'' +
-                ", tariffType='" + tariffType + '\'' +
-                '}';
+        return "|     02    | 2023-10-11 14:00:17 | 2023-10-11 14:10:19 | 00:10:02 |  "+cost+" |\n";
     }
 }
