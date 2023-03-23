@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Добавил вывод данных в текстовый файл">
+    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Исправил баг с выводом тарифа вместо типа звонка в отчете.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CDR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CDR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,18 +39,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Nikita/IdeaProjects/cdr-parser/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "two.files.diff.last.used.file": "C:/Users/Nikita/IdeaProjects/cdr-parser/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nikita/IdeaProjects/cdr-parser/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Nikita/IdeaProjects/cdr-parser/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nikita\IdeaProjects\cdr-parser\src\main\java\org\example" />
@@ -127,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679593543190</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Исправил баг с выводом тарифа вместо типа звонка в отчете.">
+      <created>1679594011020</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679594011020</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -137,6 +141,7 @@
     <MESSAGE value="Добавил расчет длительности разговора и вывод всех дат в нужном формате" />
     <MESSAGE value="Подправил вывод в консоль" />
     <MESSAGE value="Добавил вывод данных в текстовый файл" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил вывод данных в текстовый файл" />
+    <MESSAGE value="Исправил баг с выводом тарифа вместо типа звонка в отчете." />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил баг с выводом тарифа вместо типа звонка в отчете." />
   </component>
 </project>
