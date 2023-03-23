@@ -24,7 +24,7 @@ public class Main {
             System.out.println((System.currentTimeMillis() - time) + " мс" + ", Найдено строк: " + abonentMap.size());
             //Запись данных в текстовый файл
             PrintStream fileOut = new PrintStream(
-                    "./src/main/resources/data");
+                    "./src/main/resources/data.txt");
             for (Map.Entry<String, Abonent> a : abonentMap.entrySet()) {
                 fileOut.print(a.getValue().toString());
             }

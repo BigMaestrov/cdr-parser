@@ -78,6 +78,6 @@ public class CDR {
         DateFormat dateFormater2 = new SimpleDateFormat("HH:mm:ss");
         String dur = dateFormater2.format(duration);
 
-        return "|     "+tariffType+"   | "+start+" | "+end+" | "+ dur+" |  "+cost+"  |\n";
+        return "|     "+typeOfCall+"   | "+start+" | "+end+" | "+ dur+" |  "+cost+"  \n";
     }
 }
