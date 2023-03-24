@@ -70,31 +70,6 @@ public class Main {
             } else {
                 abonentMap.put(columnList.get(1), new Abonent(cdr));
             }
-
-            //Заполнение цены с учетом тарифа
-            //Тариф Поминутный
-            if(cdr.getTariffType().trim().equals("03")){
-                cdr.setCost((cdr.getDuration().getTime()+14400000)/60_000*1.5 );
-                //Тариф обычный
-            } else if(cdr.getTariffType().trim().equals("11")){
-                if(cdr.getTypeOfCall().trim().equals("01")){
-                    if(abonentMap.get(columnList.get(1)).getTotalDuration().getTime() < 100*60*1000){
-                        cdr.setCost((cdr.getDuration().getTime()+14400000)/60_000*0.5 );
-                    } else {
-                        cdr.setCost((cdr.getDuration().getTime()+14400000)/60_000*1.5 );
-                    }
-                } else {
-                    cdr.setCost(0.0);
-                }
-                //Тариф безлимит
-            } else if (cdr.getTariffType().trim().equals("06")){
-                if(abonentMap.get(columnList.get(1)).getTotalDuration().getTime() < 300*60*1000){
-                    cdr.setCost(0.0);
-                    abonentMap.get(columnList.get(1)).setTotalCost(100);
-                } else {
-                    cdr.setCost((cdr.getDuration().getTime()+14400000)/60_000*1.0);
-                }
-            }
         }
         return abonentMap;
     }

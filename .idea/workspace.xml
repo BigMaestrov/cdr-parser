@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Исправил баг с выводом тарифа вместо типа звонка в отчете.">
+    <list default="true" id="471489fc-8907-4cae-9c41-acfa18e02be3" name="Changes" comment="Добавил указание валюты в отчете.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Abonent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +66,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="cdr-parser [compile]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="compile" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Maven.cdr-parser [compile]" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -131,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679594011020</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавил указание валюты в отчете.">
+      <created>1679594686663</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679594686663</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,6 +179,7 @@
     <MESSAGE value="Подправил вывод в консоль" />
     <MESSAGE value="Добавил вывод данных в текстовый файл" />
     <MESSAGE value="Исправил баг с выводом тарифа вместо типа звонка в отчете." />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил баг с выводом тарифа вместо типа звонка в отчете." />
+    <MESSAGE value="Добавил указание валюты в отчете." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил указание валюты в отчете." />
   </component>
 </project>
