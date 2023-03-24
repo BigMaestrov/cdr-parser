@@ -21,7 +21,9 @@ CDR - сall data record - формат файла, содержащего в с�
 ![image](https://user-images.githubusercontent.com/89010195/227305921-c6970a41-57dc-4085-8925-29f0ec1559a5.png)
 ## Результат работы программы:
 ![image](https://user-images.githubusercontent.com/89010195/227305583-15effe03-2922-433e-bc53-296200be59dd.png)
+
 Сборка проекта: 
 > mvn clean package
+
 Запуск проекта:
 > java -jar .\target\cdr-parser-1.jar
